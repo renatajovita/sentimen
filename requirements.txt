@@ -3,5 +3,4 @@ pandas
 numpy
 joblib
 emoji
-torch
-transformers
+scikit-learn
