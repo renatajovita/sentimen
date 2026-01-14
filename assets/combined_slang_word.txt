@@ -1,0 +1,246 @@
+gpp,tidak apa apa
+ga,tidak
+gak,tidak
+nggak,tidak
+ngga,tidak
+kaga,tidak
+tdk,tidak
+klo,kalau
+kl,kalau
+klu,kalau
+kalo,kalau
+klw,kalau
+dr,dari
+drpd,daripada
+sblm,sebelum
+sblmnya,sebelumnya
+udh,sudah
+uda,sudah
+udh2,sudah
+blm,belum
+belom,belum
+bkn,bukan
+bkan,bukan
+dgn,dengan
+dgn2,dengan
+bgt,sekali
+banget,sekali
+bgd,sekali
+bnyk,banyak
+byk,banyak
+byr,bayar
+stlh,setelah
+trus,terus
+trs,terus
+tp,tetapi
+tpi,tetapi
+aj,saja
+aja,saja
+jg,juga
+jga,juga
+jd,jadi
+ni,ini
+nih,ini
+nie,ini
+gini,begini
+gitu,begitu
+gt,bagitu
+gtu,begitu
+knp,kenapa
+kyk,seperti
+ky,seperti
+sprti,seperti
+spt,seperti
+krn,karena
+karna,karena
+krna,karena
+dlu,dulu
+skrg,sekarang
+skrng,sekarang
+ntar,nanti
+nnti,nanti
+bsk,besok
+bsk2,besok
+td,tadi
+tdi,tadi
+pls,tolong
+plis,tolong
+wkwk,tertawa
+wkwkwk,tertawa
+wkwwk,tertawa
+haha,tertawa
+hehe,tertawa
+hehehe,tertawa
+ckck,menyesal
+anj,anjing
+anjg,anjing
+anjay,anjing
+sialan,kesal
+kampret,kesal
+mantap,bagus
+mantapp,bagus
+mantul,bagus sekali
+mantulll,bagus sekali
+mantep,bagus
+good,bagus
+goood,bagus
+nice,bagus
+nices,bagus
+keren,bagus
+kerenn,bagus
+kereen,bagus
+kren,bagus
+wow,kagum
+waw,kagum
+uwow,kagum
+uwu,lucu
+gemes,lucu
+gemess,lucu
+gemoy,lucu
+gemoyy,lucu
+imut,cantik
+imutt,cantik
+cute,cantik
+cantikk,cantik
+cantik bgt,cantik sekali
+ciamik,bagus
+maknyus,enak
+the best,terbaik
+terbaik,terbaik
+bagusss,bagus
+hebat,bagus
+joss,bagus
+josss,bagus
+oke,baik
+okey,baik
+okeee,baik
+sip,baik
+sipp,baik
+salutt,salut
+respect,hormat
+idola,panutan
+luv,cinta
+love,cinta
+ily,aku cinta kamu
+support,dukung
+semangatk,semangat
+semangat terus,semangat
+jelek,buruk
+jelekk,buruk
+jelekkk,buruk
+burik,buruk
+burikk,buruk
+sampah,buruk
+parahh,parah
+parah bgt,parah sekali
+parah banget,parah sekali
+lebay,berlebihan
+alay,berlebihan
+gila,tidak masuk akal
+gilee,tidak masuk akal
+gedek,kesal
+kzl,kesal
+kesel,kesal
+kampungan,tidak sopan
+norak,berlebihan
+toxic,kasar
+bangsat,kasar
+anjing,anjing
+kontol,alat kelamin pria
+memek,alat kelamin wanita
+tai,kotoran
+babi,kasar
+goblok,bodoh
+goblokkk,bodoh
+gblk,bodoh
+bloon,bodoh
+tolol,bodoh
+idiot,bodoh
+bodoh,bodoh
+sial,kesal
+brengsek,jahat
+brengsekk,jahat
+nyebelin,menyebalkan
+nyebelin banget,sangat menyebalkan
+ilfeel,tidak suka
+ilfil,tidak suka
+jijik,tidak suka
+jijikk,tidak suka
+gajelas,tidak jelas
+haha,tertawa
+hahaha,tertawa
+lmao,tertawa
+lol,tertawa
+wk,wk
+omg,kaget
+omgg,kaget
+astaga,kaget
+yaampun,kaget
+buset,kaget
+busett,kaget
+anjir,kaget
+anjirr,kaget
+anjrit,kaget
+hadeh,lelah
+aduh,kaget
+plissss,tolong
+kontennya bagus,bagus
+kontennya jelek,buruk
+ngakak,tertawa
+ngakakk,tertawa
+ngakak parah,tertawa sekali
+gila sih,tidak masuk akal
+parah sih,parah
+fix bgt,pasti sekali
+auto like,langsung suka
+auto unfollow,langsung berhenti mengikuti
+bikin ngakak,membuat tertawa
+bikin kesel,membuat kesal
+mlah,malah
+ga jelas,tidak jelas
+sumpah ini bagus,sangat bagus
+sumpah bagus,sangat bagus
+sumpah jelek,sangat buruk
+mager,males gerak
+gabut,tidak ada kegiatan
+baper,bawa perasaan
+julid,iri
+nyinyir,mencibir
+caper,cari perhatian
+sok asik,tidak sopan
+sok sibuk,berpura pura sibuk
+recommended,disarankan
+rekomen,disarankan
+rekomen banget,disarankan sekali
+worth it,layak
+worthit,layak
+gaworth,tidak layak
+not worth,tak layak
+bad,buruk
+badd,buruk
+terrible,mengerikan
+amazing,luar biasa
+awesome,bagus
+perfect,sempurna
+good job,kerja bagus
+nice try,usaha bagus
+fail,gagal
+anjimek,anjing
+njir,anjir
+njirr,anjir
+njirrr,anjir
+tai banget,sangat menjengkelkan
+btw,ngomong ngomong
+fyi,informasi
+idk,saya tidak tahu
+idc,saya tidak peduli
+gw,saya
+gue,saya
+gua,saya
+loe,kamu
+lu,kamu
+elo,kamu
+temen,teman
+temen2,teman teman
+min,admin
+adminnya,admin
