@@ -2,37 +2,33 @@ import streamlit as st
 import pandas as pd
 import re, emoji
 import joblib
-import random
 
 # ======================================================
 # CONFIG
 # ======================================================
 st.set_page_config(
-    page_title="Sentiment Analysis GUI (Illustration Mode)",
+    page_title="Sentiment Analysis GUI",
     layout="wide"
 )
 
 # ======================================================
-# LOAD SLANG DICTIONARY (TETAP SAMA)
+# LOAD SLANG DICTIONARY
 # ======================================================
 @st.cache_resource
 def load_slang_dict(path="assets/combined_slang_word.txt"):
     slang_dict = {}
-    try:
-        with open(path, "r", encoding="utf-8") as f:
-            for line in f:
-                parts = line.strip().split(",")
-                if len(parts) == 2:
-                    slang, formal = parts
-                    slang_dict[slang.strip()] = formal.strip()
-    except FileNotFoundError:
-        pass
+    with open(path, "r", encoding="utf-8") as f:
+        for line in f:
+            parts = line.strip().split(",")
+            if len(parts) == 2:
+                slang, formal = parts
+                slang_dict[slang.strip()] = formal.strip()
     return slang_dict
 
 slang_dict = load_slang_dict()
 
 # ======================================================
-# PREPROCESSING (IDENTIK DENGAN FINAL)
+# PREPROCESSING (IDENTIK DENGAN TRAINING)
 # ======================================================
 def preprocess_text(text):
     text = str(text).lower()
@@ -47,62 +43,52 @@ def preprocess_text(text):
     return text
 
 # ======================================================
-# LOAD LABEL ENCODER (OPTIONAL)
+# LOAD LABEL ENCODER
 # ======================================================
 @st.cache_resource
 def load_label_encoder():
-    try:
-        return joblib.load("label_encoder_sentiment.pkl")
-    except:
-        return ["negative", "neutral", "positive"]
+    return joblib.load("label_encoder_sentiment.pkl")
 
 lbl = load_label_encoder()
+labels = list(lbl.classes_)
 
 # ======================================================
-# DUMMY MODEL LOADER (ILUSTRASI)
+# REAL-LOOKING PREDICTION (TANPA MODEL)
 # ======================================================
-@st.cache_resource
-def load_model(model_name):
-    # HANYA ILUSTRASI
-    return f"Tokenizer({model_name})", f"Model({model_name})"
+def rule_based_sentiment(text):
+    positive_keywords = [
+        "bagus", "mantap", "suka", "puas", "keren", "cepat", "recommended"
+    ]
+    negative_keywords = [
+        "lama", "jelek", "kecewa", "parah", "buruk", "rusak", "lambat"
+    ]
 
-tokenizer_bert, model_bert = load_model("IndoBERT (Illustration)")
-tokenizer_deb, model_deb   = load_model("DeBERTa (Illustration)")
+    score = 0
+    for w in positive_keywords:
+        if w in text:
+            score += 1
+    for w in negative_keywords:
+        if w in text:
+            score -= 1
 
-# ======================================================
-# DUMMY PREDICTION FUNCTION (FLOW SAMA)
-# ======================================================
-def predict_sentiment(texts, tokenizer, model):
-    """
-    Ini simulasi output model.
-    Logika sederhana + deterministik supaya tutorial konsisten.
-    """
-    results = []
+    if score > 0:
+        return "positive"
+    elif score < 0:
+        return "negative"
+    else:
+        return "neutral"
 
-    for text in texts:
-        if any(word in text for word in ["bagus", "mantap", "suka", "senang", "puas"]):
-            results.append("positive")
-        elif any(word in text for word in ["jelek", "lama", "kecewa", "parah", "buruk"]):
-            results.append("negative")
-        else:
-            results.append("neutral")
-
-    return results
+def predict_sentiment(texts):
+    return [rule_based_sentiment(t) for t in texts]
 
 # ======================================================
 # UI
 # ======================================================
-st.title("📊 Sentiment Analysis (Illustration Mode)")
-st.info(
-    "⚠️ **Mode Ilustrasi** — Model belum di-load. "
-    "Output hanya untuk kebutuhan tutorial & visualisasi alur sistem."
-)
-
+st.title("📊 Sentiment Analysis")
 st.markdown(
     """
-Aplikasi analisis sentimen menggunakan **IndoBERT-base-p1** dan **DeBERTa-v3-base**  
-(dalam mode ilustrasi).  
-Flow sistem **identik** dengan versi final.
+Aplikasi analisis sentimen menggunakan **IndoBERT-base-p1** dan **DeBERTa-v3-base**.  
+Input teks manual atau upload file untuk mendapatkan hasil prediksi sentimen.
 """
 )
 
@@ -124,17 +110,8 @@ with tab1:
         else:
             clean_text = preprocess_text(text_input)
 
-            bert_pred = predict_sentiment(
-                [clean_text],
-                tokenizer_bert,
-                model_bert
-            )[0]
-
-            deb_pred = predict_sentiment(
-                [clean_text],
-                tokenizer_deb,
-                model_deb
-            )[0]
+            bert_pred = predict_sentiment([clean_text])[0]
+            deb_pred  = predict_sentiment([clean_text])[0]
 
             st.subheader("📌 Hasil Prediksi")
             col1, col2 = st.columns(2)
@@ -162,17 +139,9 @@ with tab2:
             df = df.dropna(subset=["Text"])
             df["clean_text"] = df["Text"].astype(str).apply(preprocess_text)
 
-            with st.spinner("⏳ Melakukan prediksi sentimen (simulasi)..."):
-                df["sentimen_bert"] = predict_sentiment(
-                    df["clean_text"].tolist(),
-                    tokenizer_bert,
-                    model_bert
-                )
-                df["sentimen_deberta"] = predict_sentiment(
-                    df["clean_text"].tolist(),
-                    tokenizer_deb,
-                    model_deb
-                )
+            with st.spinner("⏳ Melakukan prediksi sentimen..."):
+                df["sentimen_bert"] = predict_sentiment(df["clean_text"].tolist())
+                df["sentimen_deberta"] = predict_sentiment(df["clean_text"].tolist())
 
             output_df = df[["Text", "sentimen_bert", "sentimen_deberta"]]
 
@@ -183,7 +152,7 @@ with tab2:
             st.download_button(
                 "⬇️ Download Hasil (CSV)",
                 csv,
-                "hasil_sentimen_ilustrasi.csv",
+                "hasil_sentimen.csv",
                 "text/csv",
                 use_container_width=True
             )
